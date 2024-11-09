@@ -52,13 +52,36 @@ const Register = () => {
   const handleChange = (e) => {
     setValues({...values , [e.target.name]: e.target.value});
   }
+   
+  const validateForm = () => {
+    const { name, email, password } = values;
+
+    if (name.trim().length < 3) {
+      toast.error("Name must be at least 3 characters long.", toastOptions);
+      return false;
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      toast.error("Please enter a valid email address.", toastOptions);
+      return false;
+    }
+
+    if (password.length < 6) {
+      toast.error("Password must be at least 6 characters long.", toastOptions);
+      return false;
+    }
+
+    return true;
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!validateForm()) return;
+    
+    const {name, email, password} = values;
 
-      const {name, email, password} = values;
-
-      setLoading(false);
+      setLoading(true);
      
       const {data} = await axios.post(registerAPI, {
         name,
@@ -78,6 +101,8 @@ const Register = () => {
         setLoading(false);
       }
     };
+
+    
 
   return (
     <>
@@ -172,7 +197,7 @@ const Register = () => {
               <Form.Control type="password"  name="password" placeholder="Password" value={values.password} onChange={handleChange} />
             </Form.Group>
             <div style={{width: "100%", display: "flex" , alignItems:"center", justifyContent:"center", flexDirection: "column"}} className="mt-4">
-              <Link to="/forgotPassword" className="text-white lnk" >Forgot Password?</Link>
+            
 
               <Button
                   type="submit"
@@ -196,3 +221,4 @@ const Register = () => {
 }
 
 export default Register
+

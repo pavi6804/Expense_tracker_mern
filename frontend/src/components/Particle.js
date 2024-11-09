@@ -27,7 +27,7 @@ const Particle = () => {
           fullScreen: false,
         },
         background: {
-          color: { value: '#000' },
+          color: { value: '##d40889' },
         },
         fpsLimit: 60,
         particles: {
@@ -39,7 +39,7 @@ const Particle = () => {
             },
           },
           color: {
-            value: '#ffcc00',
+            value: '#ffff',
           },
           shape: {
             type: 'circle',

@@ -100,6 +100,7 @@ const TableData = (props) => {
               <th>Amount</th>
               <th>Type</th>
               <th>Category</th>
+              <th>Description</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -111,6 +112,7 @@ const TableData = (props) => {
                 <td>{item.amount}</td>
                 <td>{item.transactionType}</td>
                 <td>{item.category}</td>
+                <td>{item.description}</td>
                 <td>
                   <div className="icons-handle">
                     <EditNoteIcon

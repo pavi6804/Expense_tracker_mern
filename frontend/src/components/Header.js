@@ -65,7 +65,7 @@ const navigate = useNavigate();
               },
             },
             color: {
-              value: '#ffcc00',
+              value: '#0800',
             },
             shape: {
               type: 'circle',
@@ -129,12 +129,25 @@ const navigate = useNavigate();
             ></span>
           </Navbar.Toggle>
         <div>
-        <Navbar.Collapse id="responsive-navbar-nav" style={{color: "white"}}>
+        <Navbar.Collapse id="responsive-navbar-nav" style={{color: "black"}}>
           {user ? (
             <>
-            <Nav>
-                <Button variant="primary" onClick={handleShowLogout} className="ml-2">Logout</Button>
-              </Nav>
+             <Nav>
+                    {/* Avatar Image */}
+                    <div className="avatar-container">
+                      {user.avatarImage ? (
+                        <img
+                          src={user.avatarImage}
+                          alt="avatar"
+                          className="navbar-avatar"
+                          style={{ borderRadius: '50%', width: '40px', height: '40px', marginRight: '10px' }}
+                        />
+                      ) : (
+                        <div className="default-avatar">AV</div>
+                      )}
+                    </div>
+                    <Button variant="primary" onClick={handleShowLogout} className="ml-2">Logout</Button>
+                  </Nav>
             </>
           ) : (
 

@@ -154,6 +154,7 @@ const Login = () => {
               />
             </h1>
             <h2 className="text-white text-center ">Login</h2>
+            
             <Form>
               <Form.Group controlId="formBasicEmail" className="mt-3">
                 <Form.Label className="text-white">Email address</Form.Label>
@@ -186,9 +187,6 @@ const Login = () => {
                 }}
                 className="mt-4"
               >
-                <Link to="/forgotPassword" className="text-white lnk">
-                  Forgot Password?
-                </Link>
 
                 <Button
                   type="submit"

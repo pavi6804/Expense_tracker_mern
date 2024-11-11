@@ -23,9 +23,6 @@ const navigate = useNavigate();
         setUser(user);
         
       }
-
-
-    
   }, []);
 
   const handleShowLogout = () => {
@@ -157,6 +154,7 @@ const navigate = useNavigate();
               </Nav>
             </>
           )}
+
           
         </Navbar.Collapse>
       </div>
